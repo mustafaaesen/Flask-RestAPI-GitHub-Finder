@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ user.name or user.username }} | GitHub Finder{% endblock %}
+
+{% block content %}
+<main class="container">
+    <div class="user-detail-section">
+        <div class="user-header">
+            <img src="{{ user.avatar }}" alt="{{ user.username }}" class="user-detail-avatar">
+            
+            <h1>{{ user.name or user.username }}</h1>
+            <p class="username">@{{ user.username }}</p>
+            
+            {% if user.bio %}
+                <p class="text-muted">{{ user.bio }}</p>
+            {% endif %}
+        </div>
+
+        <!-- Stats Grid (3 columns x 2 rows) -->
+        <div class="stats-table">
+            <!-- Row 1, Cell 1: Location -->
+            <div class="stat-cell">
+                <div class="stat-icon">
+                    <i class="icon-map-pin"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-label">Konum</div>
+                    <div class="stat-value">{{ user.location or 'Belirtilmemiş' }}</div>
+                </div>
+            </div>
+
+            <!-- Row 1, Cell 2: Public Repos -->
+            <div class="stat-cell">
+                <div class="stat-icon">
+                    <i class="icon-code"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-label">Public Repositories</div>
+                    <div class="stat-value">{{ user.public_repos }}</div>
+                </div>
+            </div>
+
+            <!-- Row 1, Cell 3: GitHub Profile Button -->
+            <div class="stat-cell" style="justify-content: center;">
+                <a href="{{ user.profile_url }}" target="_blank" class="btn-secondary">
+                    <i class="icon-github"></i>
+                    GitHub Profili
+                </a>
+            </div>
+
+            <!-- Row 2, Cell 1: Following -->
+            <div class="stat-cell">
+                <div class="stat-icon">
+                    <i class="icon-user"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-label">Following</div>
+                    <div class="stat-value">{{ user.following }}</div>
+                </div>
+            </div>
+
+            <!-- Row 2, Cell 2: Followers -->
+            <div class="stat-cell">
+                <div class="stat-icon">
+                    <i class="icon-users"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-label">Followers</div>
+                    <div class="stat-value">{{ user.followers }}</div>
+                </div>
+            </div>
+
+            <!-- Row 2, Cell 3: Repositories Button -->
+            <div class="stat-cell" style="justify-content: center;">
+                <a href="{{ url_for('repos', username=user.username) }}" class="btn-accent">
+                    <i class="icon-code-2"></i>
+                    Repositories
+                </a>
+            </div>
+        </div>
+    </div>
+    <br><br>
+</main>
+{% endblock %}

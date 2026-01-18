@@ -1,0 +1,61 @@
+<nav class="navbar">
+    <div class="container">
+        <a href="{{ url_for('index') }}" class="navbar-logo">
+            <i class="icon-github" style="width: 24px; height: 24px;"></i>
+            REST API GitHub Finder
+        </a>
+
+        <div class="navbar-center">
+            <ul class="social-links">
+                <li>
+                    <a href="https://github.com/mustafaaesen" target="_blank" rel="noopener" title="GitHub">
+                        <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/mustafaesen/" target="_blank" rel="noopener" title="LinkedIn">
+                        <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/mustafaaesen" target="_blank" rel="noopener" title="Twitter">
+                        <img src="{{ url_for('static', filename='icons/twitter.svg') }}" alt="Twitter">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/mustafaesen/" target="_blank" rel="noopener" title="Facebook">
+                        <img src="{{ url_for('static', filename='icons/facebook.svg') }}" alt="Facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/mustafaaesen" target="_blank" rel="noopener" title="Instagram">
+                        <img src="{{ url_for('static', filename='icons/instagram.svg') }}" alt="Instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://medium.com/@mustafaaeesen" target="_blank" rel="noopener" title="Medium">
+                        <img src="{{ url_for('static', filename='icons/medium.svg') }}" alt="Medium">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://mustafaesen.com.tr" target="_blank" rel="noopener" title="Website">
+                        <img src="{{ url_for('static', filename='icons/globe.svg') }}" alt="Website">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-right">
+            <a href="{{ url_for('index') }}" class="btn-search-toggle">
+                <i class="icon-search"></i>
+                Profil Ara
+            </a>
+        </div>
+
+        <button class="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>

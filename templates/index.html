@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}GitHub Finder | Profil Ara{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            GitHub <span class="highlight">Profillerini</span><br>
+            Bul ve İncele
+        </h1>
+        
+        <p class="hero-subtitle">
+            İsim, kullanıcı adı veya anahtar kelime ile GitHub kullanıcılarını arayın
+        </p>
+
+        <form method="POST" action="{{ url_for('search') }}" class="search-form">
+            <div class="search-input-group">
+                <input
+                    type="text"
+                    name="query"
+                    class="search-input"
+                    placeholder="İsim, kullanıcı adı veya anahtar kelime giriniz"
+                    required
+                    autocomplete="off"
+                >
+                <button type="submit" class="btn-primary">
+                    <i class="icon-search"></i>
+                    Profil Bul
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

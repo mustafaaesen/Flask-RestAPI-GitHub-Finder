@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ username }} - Repositories | GitHub Finder{% endblock %}
+
+{% block content %}
+<main class="container">
+    <div class="repos-header">
+        <h2>{{ username }} - Public Repositories</h2>
+        <p class="text-muted">Kullanıcının herkese açık projeleri</p>
+    </div>
+
+    {% if repo_limit_warning %}
+        <div class="alert alert-warning">
+            ⚠️ Bu kullanıcı 100'den fazla public repository'ye sahip olabilir. Performans sebebiyle yalnızca ilk 100 repository gösterilmektedir.
+        </div>
+    {% endif %}
+
+    <div class="repo-grid">
+        {% for repo in repos %}
+            <div class="repo-card">
+                <div class="repo-card-content">
+                    <span class="repo-badge {% if repo.is_fork %}forked{% else %}original{% endif %}">
+                        {% if repo.is_fork %}
+                            <i class="icon-git-fork"></i> Forked
+                        {% else %}
+                            Original
+                        {% endif %}
+                    </span>
+
+                    <h3>
+                        <a href="{{ repo.html_url }}" target="_blank">
+                            {{ repo.name }}
+                        </a>
+                    </h3>
+
+                    <p class="repo-description">
+                        {{ repo.description or 'Açıklama yok' }}
+                    </p>
+
+                    <div class="repo-meta">
+                        {% if repo.language %}
+                            <span class="repo-meta-item">
+                                <i class="icon-code"></i>
+                                {{ repo.language }}
+                            </span>
+                        {% endif %}
+                        
+                        <span class="repo-meta-item">
+                            <i class="icon-star"></i>
+                            {{ repo.stars }}
+                        </span>
+                        
+                        <span class="repo-meta-item">
+                            <i class="icon-git-fork"></i>
+                            {{ repo.forks }}
+                        </span>
+                        
+                        <span class="repo-meta-item">
+                            <i class="icon-calendar"></i>
+                            {{ repo.updated_at[:10] }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="back-button-container">
+        <a href="{{ url_for('user_detail', username=username) }}" class="btn-back">
+            ← Geri Dön
+        </a>
+    </div>
+    <br>
+    <br>
+</main>
+{% endblock %}

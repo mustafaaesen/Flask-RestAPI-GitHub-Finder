@@ -1,0 +1,51 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer-left">
+            <span>© {{ now.year if now else 2026 }} GitHub Finder</span>
+        </div>
+
+        <div class="footer-center">
+            <ul class="social-links">
+                <li>
+                    <a href="https://github.com/mustafaaesen" target="_blank" rel="noopener" title="GitHub">
+                        <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/mustafaesen/" target="_blank" rel="noopener" title="LinkedIn">
+                        <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/mustafaaesen" target="_blank" rel="noopener" title="Twitter">
+                        <img src="{{ url_for('static', filename='icons/twitter.svg') }}" alt="Twitter">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/mustafaesen/" target="_blank" rel="noopener" title="Facebook">
+                        <img src="{{ url_for('static', filename='icons/facebook.svg') }}" alt="Facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/mustafaaesen" target="_blank" rel="noopener" title="Instagram">
+                        <img src="{{ url_for('static', filename='icons/instagram.svg') }}" alt="Instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://medium.com/@mustafaaeesen" target="_blank" rel="noopener" title="Medium">
+                        <img src="{{ url_for('static', filename='icons/medium.svg') }}" alt="Medium">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://mustafaesen.com.tr" target="_blank" rel="noopener" title="Website">
+                        <img src="{{ url_for('static', filename='icons/globe.svg') }}" alt="Website">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-right">
+            <span>made by <a href="https://github.com/mustafaesen" target="_blank" rel="noopener">mustafaesen</a></span>
+        </div>
+    </div>
+</footer>

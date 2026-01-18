@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}404 - Sayfa Bulunamadı | GitHub Finder{% endblock %}
+
+{% block content %}
+<div class="error-page">
+    <div class="error-content">
+        <div class="error-illustration">
+            <img src="{{ url_for('static', filename='images/404-error.svg') }}" alt="404 Error" style="width: 100%; height: auto;">
+        </div>
+        
+        <h1 class="error-title">Oops! 404</h1>
+        
+        <p class="error-message">
+            Aradığınız Sayfa Bulunamadı
+        </p>
+        
+        <p class="error-description">
+            Üzgünüz, aradığınız sayfa mevcut değil veya taşınmış olabilir.
+        </p>
+        
+        <a href="{{ url_for('index') }}" class="btn-primary">
+            Ana Sayfaya Dön
+        </a>
+    </div>
+</div>
+{% endblock %}
